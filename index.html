@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Sculptor</title>
+<title>Baby BI</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -390,7 +390,7 @@ const DataSculptor = () => {
         try {
             const { Document, Packer, Paragraph, HeadingLevel, ImageRun } = window.docx;
             const children=[
-                new Paragraph({text:"Data Sculptor – KPIs",heading:HeadingLevel.TITLE}),
+                new Paragraph({text:"Baby BI – KPIs",heading:HeadingLevel.TITLE}),
                 new Paragraph({text:`Exporté le ${new Date().toLocaleString('fr-FR')}`}),
                 new Paragraph({text:""}) // Ligne vide
             ];
@@ -431,7 +431,7 @@ const DataSculptor = () => {
             const blob = await Packer.toBlob(doc);
             const a=document.createElement("a");
             a.href=URL.createObjectURL(blob);
-            a.download="data-sculptor.docx";
+            a.download="baby-bi.docx";
             a.click();
             setTimeout(()=>URL.revokeObjectURL(a.href),100);
         } catch(e) { 
@@ -442,7 +442,7 @@ const DataSculptor = () => {
 
     return (
         <div className="p-8 max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold mb-4">Data Sculptor</h1>
+            <h1 className="text-3xl font-bold mb-4">Baby BI</h1>
 
             {/* FILE PREVIEW */}
             {data.length>0 && (
